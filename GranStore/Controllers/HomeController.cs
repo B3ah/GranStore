@@ -15,27 +15,24 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        Categoria categoria = new();
-        categoria.Id = 1;
-        categoria.Nome = "Eletrônicos";
-
-        Categoria categoria2 = new()
+        List<Categoria> categorias = new()
         {
-            Id = 2,
-            Nome = "Roupas"
+            new Categoria { Id = 1, Nome = "Livro"},
+            new Categoria { Id = 2, Nome = "Marcadores"},
         };
 
-        List<Produto> produtos = [
-            new(){
-                Id = 1,
-                Nome = "Notebook G15",
-                Descricao = "Lorem Ipsum",
-                QtdeEstoque = 5,
-                ValorCusto = 2000m,
-                ValorVenda = 5500m,
-                Categoria = categoria
-            }
-        ];
+        List<Produto> produtos = new()
+        {
+            new Produto { Id = 1, Nome = "Café com teu Pai", Descricao = "Livro de Ajuda", Categoria = categorias[0], QtdeEstoque = 13, ValorCusto = 100.00m, ValorVenda = 200.00m, Foto = "/img/produtos/1.png"},
+            new Produto { Id = 2, Nome = "Marcador de Coração", Descricao = "Marcador util para livros", Categoria = categorias[1], QtdeEstoque = 13, ValorCusto = 100.00m, ValorVenda = 200.00m, Foto = "/img/produtos/2.png"},
+            new Produto { Id = 3, Nome = "Marcador de Flor", Descricao = "Marcador util para livros", Categoria = categorias[1], QtdeEstoque = 13, ValorCusto = 100.00m, ValorVenda = 200.00m, Foto = "/img/produtos/3.png"},
+            new Produto { Id = 4, Nome = "Marcador Gravata", Descricao = "Marcador util para livros", Categoria = categorias[1], QtdeEstoque = 13, ValorCusto = 100.00m, ValorVenda = 200.00m, Foto = "/img/produtos/4.png"},
+            new Produto { Id = 5, Nome = "Marcador Joaninha", Descricao = "Marcador util para livros", Categoria = categorias[1], QtdeEstoque = 13, ValorCusto = 100.00m, ValorVenda = 200.00m, Foto = "/img/produtos/5.png"},
+            new Produto { Id = 6, Nome = "Marcador Liso Azul", Descricao = "Marcador util para livros", Categoria = categorias[1], QtdeEstoque = 13, ValorCusto = 100.00m, ValorVenda = 200.00m, Foto = "/img/produtos/6.png"},
+            new Produto { Id = 7, Nome = "Marcador com Textura Xadrez", Descricao = "Marcador util para livros", Categoria = categorias[1], QtdeEstoque = 13, ValorCusto = 100.00m, ValorVenda = 200.00m, Foto = "/img/produtos/7.png"},
+            new Produto { Id = 8, Nome = "Marcador de Xicara de Café", Descricao = "Marcador util para livros", Categoria = categorias[1], QtdeEstoque = 13, ValorCusto = 100.00m, ValorVenda = 200.00m, Foto = "/img/produtos/8.png"},
+        };
+
         return View();
     }
 

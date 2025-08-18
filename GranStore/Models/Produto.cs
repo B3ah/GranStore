@@ -14,5 +14,6 @@ public class Produto
     public decimal ValorCusto { get; set; }
 
     public decimal ValorVenda { get; set; }
+    public string Foto { get; set; }
 
 }
